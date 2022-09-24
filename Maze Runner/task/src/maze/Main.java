@@ -17,6 +17,7 @@ public class Main {
                 "2. Load a maze.\n" +
                 "3. Save the maze.\n" +
                 "4. Display the maze.\n" +
+                "5. Find the escape.\n" +
                 "0. Exit.";
 
         String INCORRECT_COMMAND = "Incorrect option. Please try again";
@@ -33,7 +34,7 @@ public class Main {
             }
 
             int command = Integer.parseInt(scanner.nextLine());
-            if (!maze.isMaze() && (command == 3 || command == 4)) {
+            if (!maze.isMaze() && (command == 3 || command == 4 || command == 5)) {
                 System.out.println(INCORRECT_COMMAND);
                 continue;
             }
@@ -55,6 +56,9 @@ public class Main {
                     break;
                 case 4:
                     maze.show();
+                    break;
+                case 5:
+                    maze.findEscape();
                     break;
                 case 0:
                     return;
